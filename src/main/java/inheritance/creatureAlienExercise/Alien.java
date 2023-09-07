@@ -7,23 +7,24 @@ package inheritance.creatureAlienExercise;
  *  Has a fight() method that is not in the parent class.
  *
  *  */
-public class Alien extends Creature { // FILL IN CODE: Alien should be a subclass of Creature
+public class Alien  { // FILL IN CODE: Alien should be a subclass of Creature
     private String planet; // the name of the planet where the alien lives
     private static int numAliensFromMars = 0; // the number of aliens from Mars
 
-    public Alien(String greeting, String planet) {
+    /*public Alien(String greeting, String planet) {
+
 
         // FILL IN CODE to initialize greeting and planet
         // How will you initialize greeting if it's private in the parent class Creature?
 
         // Also, if the planet is Mars, increment numAliensFromMars to keep track of all aliens from Mars
 
-    }
+    } */
 
     // FILL IN CODE
     // Override the speak method so that the alien says:
     // Alien from such and such planet says greeting
-    @Override
+    //@Override
     public void speak() {
         // FILL IN CODE
     }
