@@ -11,9 +11,9 @@ import java.util.ArrayList;
 /** The example demonstrates reading from a JSON file */
 public class JsonProcessing {
     public static void main(String[] args) {
-        // parseFruitFile("input/fruit.json");
+        //parseFruitFile("input/fruit.json");
         // parsePersonInfo("input/personInfo.json");
-       parsePeopleArray("input/people.json");
+        parsePeopleArray("input/people.json");
     }
 
     /**
@@ -58,14 +58,14 @@ public class JsonProcessing {
             // If we want to do the opposite:
             // save an object p of class Person to a json file:
             // Option 1:
-            String jsonInString  = gson.toJson(p);
+            //String jsonInString  = gson.toJson(p);
 
             // Option 2:
-            /*Gson gsonForWriting = new GsonBuilder().setPrettyPrinting().create();
+            Gson gsonForWriting = new GsonBuilder().setPrettyPrinting().create();
             String jsonInString = gsonForWriting.toJson(p);
             System.out.println();
             System.out.println("Write the object to the json file: ");
-             */
+
             System.out.println(jsonInString);
         } catch (IOException e) {
             System.out.println("Could not read the file: " + e);
@@ -97,7 +97,8 @@ public class JsonProcessing {
             }
 
             // Another  way of reading from json to a class would be:
-            // People people = gson.fromJson(br, People.class);
+            //People people = gson.fromJson(fr, People.class);
+            //System.out.println(people);
 
         } catch (IOException e) {
             System.out.println("Could not read the file: " + e);
