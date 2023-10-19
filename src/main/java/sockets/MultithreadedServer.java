@@ -18,7 +18,9 @@ public class MultithreadedServer {
 
         public static void main(String[] args) {
 
-            new MultithreadedServer().startServer();
+            MultithreadedServer server = new MultithreadedServer();
+            server.startServer();
+
         }
 
         public void startServer() {
@@ -28,20 +30,11 @@ public class MultithreadedServer {
 
                 @Override
                 public void run() {
-                    try {
-                        ServerSocket welcomingSocket = new ServerSocket(PORT);
-                        System.out.println("Waiting for clients to connect...");
-                        while (!isShutdown) {
-                            Socket clientSocket = welcomingSocket.accept();
-                            threads.submit(new ClientTask(clientSocket));
-                        }
-                        if (isShutdown) {
-                            welcomingSocket.close();
-                        }
-                    } catch (IOException e) {
-                        System.err.println("Unable to process client request");
-                        e.printStackTrace();
-                    }
+                    // FILL IN CODE
+                    // Create a welcoming socket
+                    // Listen for client requests
+                    // Create a new Runnable Client Task to process each request
+
                 }
             };
             Thread serverThread = new Thread(serverTask);
@@ -49,7 +42,7 @@ public class MultithreadedServer {
 
         }
 
-        private class ClientTask implements Runnable {
+        class ClientTask implements Runnable {
             private final Socket connectionSocket;
 
             private ClientTask(Socket connectionSocket) {
