@@ -23,20 +23,16 @@ public class SimpleClient extends Thread {
 
 			// For reading user keyboard input from the console
 			// (has nothing to do with sockets!)
-			//BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			Scanner sc  = new Scanner(System.in);
 
 			// For writing to the socket (so that the server could get client messages)
-			PrintWriter writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
+			PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
 
-			String input = new String();
+			String input = null;
 			while (!socket.isClosed()) {
-				//input = reader.readLine(); // read what the user typed in the
-											// console
-				input = sc.nextLine();
+				input = sc.nextLine(); // read keyboard input
+				writer.println(input); // send the message to the server via the socket
 
-				writer.println(input); // send the message to the server via the
-										// socket
 				if (input.equals(SimpleServer.EOT)) {
 					System.out.println("Client: Ending client.");
 					socket.close();
